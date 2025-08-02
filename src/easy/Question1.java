@@ -11,10 +11,12 @@ public class Question1 {
     }
 
     public static int[] twoSum(int[] nums, int target) {
-        // nums[index] : index
+        // Map < nums[index] : index >
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
+            // Find the complement of nums[i] that would sum to the target
             int another = target - nums[i];
+            // Check if this complement is already in the map
             if (map.containsKey(another))
                 return new int[]{map.get(another), i};
             map.put(nums[i], i);
